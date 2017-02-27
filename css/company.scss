@@ -1,0 +1,48 @@
+
+
+
+#contents{
+
+  .tab-pane{
+    width: 100%;
+    height: 100%;
+    > .infoEtc{
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-indent: 10px;
+      font-size: 20px;
+    }
+    > .infoContent{
+      width: 100%;
+      // height: calc(100% - 50px);
+      height: 100%;
+      padding: 5px;
+      float: left;
+      >div{
+        margin: 0px 1.5%;
+      }
+      > .infoImg{
+        width: 47%;
+        height: 100%;
+        float: left;
+        >img{
+        border: 1px solid #f0f0f0;
+          width: 100%;
+        }
+      }
+      > .infoBody{
+        float: left;
+        height: 100%;
+        width: 47%;
+        >textarea{
+          border: 1px solid #f0f0f0;
+          resize: none;
+          background-color: white;
+          width: 100%;
+          height: 550px;
+        }
+      }
+    }
+  }
+}

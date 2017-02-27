@@ -1,0 +1,53 @@
+.breadcrumb {
+  margin: 0px;
+  height: 40px; }
+  .breadcrumb > li {
+    cursor: pointer;
+    font-size: 18px; }
+
+#contents > div {
+  float: left; }
+#contents > #center {
+  height: calc(100% - 40px); }
+  #contents > #center > #portfolioList {
+    height: 100%;
+    overflow: auto;
+    background-color: #fdfdfd; }
+    #contents > #center > #portfolioList > div {
+      width: 100%;
+      padding: 0px 10px 10px 10px; }
+      #contents > #center > #portfolioList > div > .resultTitle {
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        font-size: 18px;
+        font-weight: bold;
+        text-indent: 10px;
+        background-color: #f3f3f3; }
+      #contents > #center > #portfolioList > div > .resultContent {
+        padding: 10px; }
+        #contents > #center > #portfolioList > div > .resultContent > img {
+          border: 1px solid #d3d3d3;
+          width: 48%;
+          height: 500px;
+          margin: 10px;
+          cursor: pointer; }
+
+.modal-content > .modal-body {
+  width: 100%;
+  height: 538px; }
+  .modal-content > .modal-body > .nextItem,
+  .modal-content > .modal-body > .prevItem {
+    width: 5%;
+    height: 100%;
+    float: left; }
+  .modal-content > .modal-body > img {
+    float: left;
+    width: 90%;
+    height: 100%; }
+
+.modal-footer > label {
+  float: left;
+  margin-left: 10px; }
+
+/*# sourceMappingURL=portfolio.css.map */

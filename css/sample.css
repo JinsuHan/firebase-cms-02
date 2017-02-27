@@ -1,0 +1,87 @@
+
+#loadingData{
+  top:0; width:100%; height:100%; position:absolute; background-color:rgba(239, 242, 251, 0.5); z-index:999; line-height: 2000%; font-weight: bold; font-size: 40px; text-align: center;
+}
+.selected{
+  font-weight: bold;
+  background-color: #d3d3d3;
+}
+
+#sideTab{
+  width: 100%;
+  height: 80px;
+  padding: 10px 5px;
+}
+.tab{
+  margin: 2px 2px;
+  border: 1px solid #c3c3c3;
+  cursor: pointer;
+  width: calc(25% - 6px);
+  height: calc(50% - 3px);
+  line-height: 25px;
+  float: left;
+  text-align: center;
+}
+#sideContents{
+  width: 100%;
+  height: calc(100% - 100px);
+}
+#sideInfo{
+  width: 93%;
+  margin: 0px 2%;
+  height: 45px;
+  padding: 0px 10px;
+  border: 1px solid #c3c3c3;
+  background-color: #d3d3d3;
+}
+#sideInfo > label{
+  margin: 12px 0px;
+}
+#sideInfo > #newItem{
+  width: 50px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  float: right;
+  margin: 5px 0px;
+}
+
+#sidebar_list_area_admin{
+  width: 100%;
+  height: calc(100% - 45px);
+  margin-left: 5px;
+}
+
+.infoWrap{
+  padding-left: 20px;
+}
+.contentsStyle > p{
+  height: 40px;
+}
+.contentsStyle > p >label{
+  width: 130px;
+  height: 100%;
+  line-height: 38px;
+  padding-left: 5px;
+  float: left;
+}
+.contentsStyle > p > .existImage{
+  float: none;
+}
+.contentsStyle > p >input{
+  height: 40px;
+  width: 50%;
+  min-width: 250px;
+}
+.contentsStyle > p >input[type="file"]{
+  height: 38px;
+  width: 30%;
+  min-width: 150px;
+  float: left;
+}
+.contentsStyle > p >select{
+  width: 50%;
+  min-width: 250px;
+}

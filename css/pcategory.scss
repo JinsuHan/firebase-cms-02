@@ -1,0 +1,54 @@
+
+
+
+
+#contents{
+  float: left;
+  > #center{
+
+    #categoryInfo{
+      width: 100%;
+      height: 50px;
+      >label{
+        margin: 0px;
+        width: 100%;
+        text-indent: 20px;
+      }
+      >#categoryTitle{
+        font-size: 18px;
+        height: 30px;
+        line-height: 30px;
+      }
+      >#categorySummary{
+      height: 20px;
+      line-height: 20px;
+      }
+    }
+    #categoryList{
+      overflow: auto;
+      height: calc(100% - 50px);
+      background-color: #fdfdfd;
+      > div{
+        border: 1px solid #eaeaea;
+        background-color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        float: left;
+        width: 275px;
+        height: 320px;
+        margin: 1.5%;
+        >.previewImg{
+          width: 100%;
+          height: 85%;
+          text-align: center;
+          line-height: 275px;
+        }
+        >.groupTitle{
+          line-height: 45px;
+          text-align: center;
+          height: 15%;
+        }
+      }
+    }
+  }
+}

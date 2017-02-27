@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>index</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+
+  <!-- datepicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script defer src="../js/spin.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/setting.css">
+
+  <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+  <script src="js/init.js"></script>
+  <!-- <script src="../js/common.js"></script> -->
+</head>
+<body>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/another/">Company</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav ">
+        <li id="dropdown01" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">카테고리 <span class="caret"></span></a>
+          <ul id="dropdown-category" class="dropdown-menu">
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/another/portfolio.html">포트폴리오</a></li>
+        <li><a href="/another/company.html">회사소개</a></li>
+        <li><a href="/another/contact.html">고객센터</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">관리자 <span class="caret"></span></a>
+          <ul id="admin" class="dropdown-menu">
+            <li><input id="adminPw" type="password"/><input id="setting" type="button" value="확인"/></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div id="contents">
+    <div id="center">
+      <div id="left">
+        <div id="sideTab">
+          <div id="tab-category" class="tab buttonNeutrality">카테고리</div>
+          <div id="tab-group" class="tab buttonNeutrality">그룹</div>
+          <div id="tab-product" class="tab buttonNeutrality">제품</div>
+          <div id="tab-portfolio" class="tab buttonNeutrality">포트폴리오</div>
+          <div id="tab-post" class="tab buttonNeutrality">글</div>
+          <div id="tab-info" class="tab buttonNeutrality">기타</div>
+        </div>
+
+        <div id="sideContents">
+          <div id="sideInfo">
+            <label></label>
+            <div id="newItem" class="buttonPositive">추가</div>
+          </div>
+
+          <div id= "sidebar_list_area_admin">
+
+          </div>
+        </div>
+      </div>
+      <div id="right">
+        <div class="infoWrap" >
+          <h3 id="targetName"></h3>
+          <div hidden id="targetCategoryId"></div>
+          <div hidden id="targetProductId"></div>
+          <div hidden id="targetGroupId"></div>
+          <div hidden id="targetId"></div>
+          <hr />
+
+          <div id="admin-post" class="contentsStyle">
+            <p>
+              <label>제목</label>
+              <input id="post_title" class="form-control" />
+            </p>
+            <p class="postPTag">
+              <label >상세정보</label>
+              <textarea id="post_body" class="form-control"></textarea>
+              <!-- <input id="post_body" class="form-control" /> -->
+            </p>
+            <p>
+              <label>섹션</label>
+              <input id="post_section" class="form-control" />
+            </p>
+            <p>
+              <label >요약</label>
+              <input id="post_summary" class="form-control" />
+            </p>
+            <p>
+              <label>이미지</label>
+              <input type="file" id="post_image" class="form-control"/>
+              <label id="post_existImage" class="existImage"></label>
+            </p>
+          </div>
+
+          <div id="admin-info" class="contentsStyle">
+            <p>
+              <label>회사명</label>
+              <input id="info_name" class="form-control"  />
+            </p>
+            <p>
+              <label >영문 회사명</label>
+              <input id="info_eng_name" class="form-control" />
+            </p>
+            <p>
+              <label>전화번호</label>
+              <input id="info_phone" class="form-control"  />
+            </p>
+            <p>
+              <label >대표 핸드폰 번호</label>
+              <input id="info_cellphone" class="form-control" />
+            </p>
+            <p>
+              <label >대표 이메일 주소</label>
+              <input id="info_email" class="form-control" />
+            </p>
+            <p>
+              <label >팩스 번호</label>
+              <input id="info_fax" class="form-control" />
+            </p>
+            <p>
+              <label >관리자 비밀번호</label>
+              <input id="info_pw" class="form-control" />
+            </p>
+          </div>
+
+          <div id="admin-category" class="contentsStyle">
+            <p>
+              <label>제목</label>
+              <input id="category_title" class="form-control"  />
+            </p>
+            <p>
+              <label >요약</label>
+              <input id="category_summary" class="form-control" />
+            </p>
+
+          </div>
+
+          <div id="admin-group" class="contentsStyle">
+            <p>
+              <label>제목</label>
+              <input id="group_title"  class="form-control" />
+            </p>
+            <p>
+              <label>소속 제품 카테고리</label>
+              <select id="group_category_id"  class="form-control" ></select>
+            </p>
+            <p>
+              <label>요약</label>
+              <input id="group_summary" class="form-control" />
+            </p>
+            <p>
+              <label>썸네일 이미지</label>
+              <input type="file" id="group_thumb" class="form-control"/>
+              <label id="group_existImage" class="existImage" ></label>
+            </p>
+            <p>
+              <label>표시 가중치</label>
+              <input id="group_priority"  class="form-control" />
+            </p>
+            <p>
+              <label>기타 기재사항</label>
+              <input id="group_extra" class="form-control" />
+            </p>
+
+
+          </div>
+
+          <div id="admin-product" class="contentsStyle">
+            <p>
+              <label>제목</label>
+              <input id="product_title" class="form-control" />
+            </p>
+            <p>
+              <label>관련 포트폴리오</label>
+              <input readonly id="product_portfolio" class="form-control"  />
+            </p>
+            <p>
+              <label>소속 제품 그룹</label>
+              <select id="product_group_id" class="form-control" ></select>
+            </p>
+            <p>
+              <label>요약</label>
+              <input id="product_summary" class="form-control" />
+            </p>
+            <p>
+              <label>상세 정보</label>
+              <input id="product_body" class="form-control" />
+            </p>
+            <p>
+              <label>이미지</label>
+              <input type="file" id="product_image" class="form-control"/>
+              <label id="product_existImage" class="existImage"></label>
+            </p>
+            <p>
+              <label>게시 여부</label>
+              <input id="product_publish" class="form-control" />
+            </p>
+            <p>
+              <label>신제품 여부</label>
+              <input id="product_new" class="form-control" />
+            </p>
+
+          </div>
+
+          <div id="admin-portfolio" class="contentsStyle">
+            <p>
+              <label>제목</label>
+              <input id="portfolio_title" class="form-control" />
+            </p>
+            <p>
+              <label>소속 제품</label>
+              <select id="portfolio_product_id" class="form-control" ></select>
+            </p>
+            <p>
+              <label>시/도</label>
+              <input id="portfolio_city" class="form-control" />
+            </p>
+            <p>
+              <label>이미지</label>
+              <input type="file" id="portfolio_image" class="form-control"/>
+              <label id="portfolio_existImage" class="existImage"></label>
+            </p>
+            <p>
+              <label>기타 기재사항</label>
+              <input id="portfolio_extra" class="form-control" />
+            </p>
+          </div>
+          <div id="buttonArea">
+            <p >
+              <input type="button" class="addBtn btn btn-default buttonPositive" value="등 록"/>
+              <input type="button" class="updateBtn btn btn-default buttonNeutrality" value="수 정"/>
+              <input type="button" class="deleteBtn btn btn-default buttonDanger" value="삭 제"/>
+            </p>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+    <div id="footer">
+      <label class="footerText01"></label>
+      <label class="footerText02"></label>
+    </div>
+
+  <div hidden id="loadingData">
+  </div>
+
+  <div hidden id="dialog">
+    <input id="password" value="아직 만드는중"/>
+    <button id="submit">확인</button>
+  </div>
+
+      <script src="js/common.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="../js/awsFileUpload.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,40 @@
+#contents {
+  float: left; }
+  #contents > #center #categoryInfo {
+    width: 100%;
+    height: 50px; }
+    #contents > #center #categoryInfo > label {
+      margin: 0px;
+      width: 100%;
+      text-indent: 20px; }
+    #contents > #center #categoryInfo > #categoryTitle {
+      font-size: 18px;
+      height: 30px;
+      line-height: 30px; }
+    #contents > #center #categoryInfo > #categorySummary {
+      height: 20px;
+      line-height: 20px; }
+  #contents > #center #categoryList {
+    overflow: auto;
+    height: calc(100% - 50px);
+    background-color: #fdfdfd; }
+    #contents > #center #categoryList > div {
+      border: 1px solid #eaeaea;
+      background-color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      float: left;
+      width: 275px;
+      height: 320px;
+      margin: 1.5%; }
+      #contents > #center #categoryList > div > .previewImg {
+        width: 100%;
+        height: 85%;
+        text-align: center;
+        line-height: 275px; }
+      #contents > #center #categoryList > div > .groupTitle {
+        line-height: 45px;
+        text-align: center;
+        height: 15%; }
+
+/*# sourceMappingURL=pcategory.css.map */
